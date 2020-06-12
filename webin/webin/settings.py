@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_crontab',
     'chartshow'
 ]
 
@@ -123,18 +123,18 @@ STATIC_URL = '/static/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Email setting
-EMAIL_HOST = 'smtp.163.com'
+EMAIL_HOST = 'mail.goiba.net'
 # 设置端口号，为数字
 EMAIL_PORT = 25
 #设置发件人邮箱
-EMAIL_HOST_USER = 'iba_gz_ptracker@163.com'
+EMAIL_HOST_USER = 'xwchang@goiba.net'
 # 设置发件人 授权码
-EMAIL_HOST_PASSWORD = 'WTGTODMVIKUEZVEH'
+EMAIL_HOST_PASSWORD = '123qwe!@#QWE'
 # 设置是否启用安全链接
 EMAIL_USE_TLS = False
-DEFAULT_FROM_EMAIL = 'iba_gz_ptracker@163.com'
+DEFAULT_FROM_EMAIL = 'xwchang@goiba.net'
 
 # crontab 定时任务
 CRONJOBS = (
-    ('/2 * * * *', 'chartshow.utils.mailing.mailing'),
+    ('*/2 * * * *', 'chartshow.utils.mailing.mailing'),
 )

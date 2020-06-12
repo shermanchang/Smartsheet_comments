@@ -46,7 +46,7 @@ def table(request):
 def send_info(request):
     EMAIL_TITLE = 'T30-GZ Performance Tracker'
     FROM_EMAIL = settings.EMAIL_HOST_USER
-    TO_ADDRESS = 'changwen11@163.com'
+    TO_ADDRESS = 'xwchang@iba-group.com'
     tm_list = wk.get_TM_list()
     tl_list = wk.get_TL_list()
     tml = list()
@@ -71,7 +71,9 @@ def send_info(request):
     if msg.get_connection() is not None:
         msg.attach_alternative(html_content, "text/html")
         status = msg.send()
+        return HttpResponse('Email sent manually successfully, with ' + str(status) + ' letter(s)')
     else:
         status = "No connection to mail server"
-    return HttpResponse(str(status))
+        return HttpResponse(str(status))
+
 

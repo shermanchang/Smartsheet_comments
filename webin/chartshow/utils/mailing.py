@@ -19,7 +19,7 @@ import collections
 def mailing():
     EMAIL_TITLE = 'T30-GZ Performance Tracker'
     FROM_EMAIL = settings.EMAIL_HOST_USER
-    TO_ADDRESS = 'changwen11@163.com'
+    TO_ADDRESS = 'xwchang@iba-group.com'
     tm_list = get_TM_list()
     tl_list = get_TL_list()
     tml = list()

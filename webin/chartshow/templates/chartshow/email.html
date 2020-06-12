@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T30-Guangzhou Performance tracker</title>
+    <style>
+
+/* Border styles */
+table thead, table tr {
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: rgb(235, 242, 224);
+
+}
+table {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: rgb(235, 242, 224);
+}
+
+/* Padding and font style */
+table td, table th {
+padding: 5px 10px;
+font-size: 12px;
+font-family: Verdana;
+color: rgb(149, 170, 109);
+}
+
+/* Alternating background colors */
+table tr:nth-child(even) {
+background: rgb(230, 238, 214)
+}
+table tr:nth-child(odd) {
+background: #FFF
+}
+    </style>
+</head>
+<body>
+<div id="container" style="width: 400px; height: 400px; margin: 0 auto">
+<h2>T30-Guangzhou smartsheet tracker</h2>
+    <table border="0">
+        <caption>Test Matrix</caption>
+            <tr>
+                <th>姓名</th>
+                <th>最后一次提交时间</th>
+                <th>本周共提交次数</th>
+            </tr>
+            {% for k1, v1 in context_tml.items %}
+                <tr>
+                    <td>{{k1}}</td>
+                    <td></td>
+                    <td>{{v1}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table border="0">
+        <caption>Task List</caption>
+            <tr>
+                <th>姓名</th>
+                <th>最后一次提交时间</th>
+                <th>本周共提交次数</th>
+            </tr>
+            {% for k2, v2 in context_tll.items %}
+                <tr>
+                    <td>{{k2}}</td>
+                    <td></td>
+                    <td>{{v2}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% if control == 'yes' %}
+    <a href="/send">send email</a>
+    <br><a href="/index">Back to graph</a>
+    {% endif %}
+
+    </div>
+</body>
+</html>

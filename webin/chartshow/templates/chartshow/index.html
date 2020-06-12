@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>T30-Guangzhou  Performance tracker</title>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div id="container" style="width: 700px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+   var dict = {{ context_tml|safe }}
+   console.log(dict);
+   var title = {
+       text: 'T30-GZ Performance Tracker'
+   };
+   var subtitle = {
+        text: 'Performance of Smartsheet activity level'
+   };
+   var xAxis = {
+       categories: ['上周 smartsheet TestMatrix 提交数量']
+   };
+   var yAxis = {
+      title: {
+         text: '统计数量'
+      },
+      plotLines: [{
+         value: 0,
+         width: 1,
+         color: '#808080'
+      }]
+   };
+
+   var tooltip = {
+      valueSuffix: '条'
+   }
+
+   var legend = {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+   };
+
+   var series = dict
+   console.log(series);
+
+   var json = {};
+
+   json.title = title;
+   json.subtitle = subtitle;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.tooltip = tooltip;
+   json.legend = legend;
+   json.series = series;
+
+   $('#container').highcharts(json);
+});
+</script>
+<a href="/table">table view</a>
+</body>
+</html>

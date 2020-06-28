@@ -1,11 +1,27 @@
+{% load static %}
 <html>
 <head>
 <meta charset="UTF-8" />
 <title>T30-Guangzhou  Performance tracker</title>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
+<link rel="stylesheet" href="{% static 'chartshow/bootstrap/css/bootstrap.css'%}">
+<link rel="stylesheet" href="{% static 'chartshow/css/main.css'%}">
 </head>
 <body>
+<div class="container-fluid">
+    <div class="row clolor-change">
+        <div class="col align-self-start ">
+          三分之一空间占位
+        </div>
+        <div class="col align-self-center">
+          三分之一空间占位
+        </div>
+        <div class="col align-self-end">
+            <kbd>三分之一空间占位</kbd>
+        </div>
+      </div>
+</div>
 <div id="container" style="width: 700px; height: 400px; margin: 0 auto"></div>
 <script language="JavaScript">
 $(document).ready(function() {
@@ -59,5 +75,8 @@ $(document).ready(function() {
 });
 </script>
 <div><a style="vertical-align: middle;" href="/table">table view</a></div>
+
+<script src="{% static 'chartshow/bootstrap/js/bootstrap.js'%}"></script>
+<script src="{% static 'chartshow/scripts/main.js'%}"></script>
 </body>
 </html>

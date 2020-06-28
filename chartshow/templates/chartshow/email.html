@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,8 @@ table tr:nth-child(odd) {
 background: #FFF
 }
     </style>
+    <link rel="stylesheet" href="{% static 'chartshow/bootstrap/css/bootstrap.css'%}">
+<link rel="stylesheet" href="{% static 'chartshow/css/main.css'%}">
 </head>
 <body>
 <div id="container" style="width: 400px; height: 400px; margin: 0 auto">
@@ -74,5 +76,7 @@ background: #FFF
     <br><a href="10.20.50.16:9999/">Go to graph page</a>
     {% endif %}
     </div>
+<script src="{% static 'chartshow/bootstrap/js/bootstrap.js'%}"></script>
+<script src="{% static 'chartshow/scripts/main.js'%}"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+body,td,th{
+font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+.bgo {
+background-color: #000000;
+}
+
+.clolor-change{
+background-image: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);
+color:#fff;
+}

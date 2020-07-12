@@ -2,24 +2,28 @@ from django.conf import settings
 from django.shortcuts import render, HttpResponse
 from django.template.loader import render_to_string
 
-from .utils import mailing, weekly_check as wk
+from .utils import mailing, db_init, weekly_check as wk
 from django.template import Context, loader
 from django.core.mail import EmailMultiAlternatives
 import collections
 
 
 def index(request):
-    tm_list = wk.get_TM_list()
-    tml = list()
-    for i in tm_list:
-        tml.append(i['name'])
-    dic_tm = collections.Counter(tml)
-    context_tml = {}
-    listq = []
-    for key in dic_tm:
-        context_tml[key] = dic_tm[key]
-        listq.append({'name': key, 'data': [context_tml[key]]})
-    return render(request, 'chartshow/index.html', {'context_tml': listq})
+    # tm_row = wk.get_TM_work_list()
+    # # tm_list = wk.get_TM_list()
+    # tml = list()
+    # for i in tm_list:
+    #     tml.append(i['name'])
+    # dic_tm = collections.Counter(tml)
+    # context_tml = {}
+    # listq = []
+    # for key in dic_tm:
+    #     context_tml[key] = dic_tm[key]
+    #     listq.append({'name': key, 'data': [context_tml[key]]})
+
+    work_count, work_list = wk.get_db()
+    return render(request, 'chartshow/index.html', {'work_count': work_count,
+                                                    'work_list': work_list})
 
 
 def table(request):

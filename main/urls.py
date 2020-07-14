@@ -20,8 +20,12 @@ from chartshow import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # 定义图表url
-    path('', views.index, name='index'),
-    path('index/', views.index, name='index'),
-    path('table/', views.table),
-    path('send/', views.send_info),
+    path('', views.indexPage, name='index'),
+    path('index', views.indexPage, name='index'),
+    path('table', views.table),
+    path('send', views.send_info),
+    path('chart', views.chart),
+    path('team', views.team),
+    path('links', views.links),
+    path('settings', views.settings),
 ]

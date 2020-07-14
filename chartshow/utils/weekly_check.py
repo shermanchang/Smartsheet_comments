@@ -42,9 +42,6 @@ work_list = {}
 def get_TM_work_list():
     TM_sheet = ss.Sheets.get_sheet(SHEET_ID_TM)
     for row in TM_sheet.rows:
-        # if str(row.cells[1].display_value).startswith('ML'):
-        #     if re.match("^ML[\d]*$", row.cells[1].display_value) is not None:
-        #         print(row.cells[1].display_value, row.cells[2].display_value)
 
         name = row.cells[7].display_value
         status = row.cells[8].display_value

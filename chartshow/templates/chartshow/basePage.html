@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>T30-Guangzhou Dashboard</title>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'chartshow/bootstrap/css/bootstrap.css'%}">
+<link rel="stylesheet" href="{% static 'chartshow/css/main.css'%}">
+<link rel="stylesheet" href="{% static 'chartshow/css/Chart.css'%}">
+<link rel="stylesheet" href="{% static 'chartshow/bootstrap/css/bootstrap-vertical-menu.css'%}">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row color-change fixed-top">
+        <div class="col-2 align-self-start ">
+            <img style="width:60px;height:60px;margin-left:0px;margin-top: 0px;" src="{% static 'chartshow/images/IBA-Logo.jpg'%}" class="img-rounded" width="80" height="80">
+        </div>
+        <div class="col-8 align-self-center text-center">
+            <h2>IBA Installation Dashboard  SAT.130</h2>
+        </div>
+        <div class="col-2 align-self-end"></div>
+    </div>
+
+{% block content %}
+<div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+{% endblock %}
+
+</div>
+<script src="{% static 'chartshow/bootstrap/js/bootstrap.js'%}"></script>
+<script src="{% static 'chartshow/scripts/main.js'%}"></script>
+<script src="{% static 'chartshow/scripts/Chart.js'%}"></script>
+</body>
+</html>

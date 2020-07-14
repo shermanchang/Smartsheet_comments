@@ -8,9 +8,9 @@ from django.core.mail import EmailMultiAlternatives
 import collections
 
 
-def index(request):
+def indexPage(request):
     # tm_row = wk.get_TM_work_list()
-    # # tm_list = wk.get_TM_list()
+    # tm_list = wk.get_TM_list()
     # tml = list()
     # for i in tm_list:
     #     tml.append(i['name'])
@@ -24,6 +24,22 @@ def index(request):
     work_count, work_list = wk.get_db()
     return render(request, 'chartshow/index.html', {'work_count': work_count,
                                                     'work_list': work_list})
+
+
+def chart(request):
+    return render(request, 'chartshow/chartPage.html')
+
+
+def team(request):
+    return render(request, 'chartshow/myteam.html')
+
+
+def links(request):
+    return render(request, 'chartshow/links.html')
+
+
+def settings(request):
+    return render(request, 'chartshow/settings.html')
 
 
 def table(request):

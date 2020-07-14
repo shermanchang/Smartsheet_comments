@@ -34,8 +34,8 @@ def team(request):
     return render(request, 'chartshow/myteam.html')
 
 
-def links(request):
-    return render(request, 'chartshow/links.html')
+def emergency(request):
+    return render(request, 'chartshow/emergency.html')
 
 
 def settings(request):

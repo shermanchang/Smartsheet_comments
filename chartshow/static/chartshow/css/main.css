@@ -17,9 +17,13 @@ margin-right:3px;
 margin-bottom:4px;
 }
 
-.card {
+.accordion > .card {
 border: 0px;
 }
+
+.card-em{
+min-width: 100%;}
+
 
 .float-mode {
     transition: transform .01s;

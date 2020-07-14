@@ -26,6 +26,6 @@ urlpatterns = [
     path('send', views.send_info),
     path('chart', views.chart),
     path('team', views.team),
-    path('links', views.links),
+    path('emergency', views.emergency),
     path('settings', views.settings),
 ]

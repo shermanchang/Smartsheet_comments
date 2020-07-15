@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.http import FileResponse
 from django.shortcuts import render, HttpResponse
 from django.template.loader import render_to_string
 
@@ -40,6 +41,15 @@ def emergency(request):
 
 def settings(request):
     return render(request, 'chartshow/settings.html')
+
+
+def getLoop(request, title):
+    name = title
+    file = open('chartshow/static/chartshow/files/' + name, 'rb')
+    response = FileResponse(file)
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename=' + name
+    return response
 
 
 def table(request):

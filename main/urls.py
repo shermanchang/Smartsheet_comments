@@ -28,4 +28,5 @@ urlpatterns = [
     path('team', views.team),
     path('emergency', views.emergency),
     path('settings', views.settings),
+    path('get/<str:title>', views.getLoop),
 ]

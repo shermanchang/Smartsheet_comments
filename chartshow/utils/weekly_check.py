@@ -35,11 +35,9 @@ for sheet in action.data:
 print("got the sheet 'Guangzhou - Test Matrix' id = " + str(SHEET_ID_TM))
 print("got the sheet 'Guangzhou - Test Matrix' id = " + str(SHEET_ID_TL))
 
-# collect all member name:
-work_list = {}
-
 
 def get_TM_work_list():
+    work_list = {}
     TM_sheet = ss.Sheets.get_sheet(SHEET_ID_TM)
     for row in TM_sheet.rows:
 
@@ -90,12 +88,14 @@ def get_db():
     return work_count, list_by_name
 
 
-# Only call by the crontab each week, means DB change will not trigger by Web app.
+# Only call by the crontab each weekend, means DB change will not trigger by Web app.
 def check_update():
     data = WorkList.objects.all().values()
     db_data = list(data)
     local_work_list = get_TM_work_list()
-    # loop the db data
+
+
+    # loop the db data, this will only update what already in the db. but no action for new assigning job
     for item in db_data:
         for name, value_list in local_work_list.items():
             if item["owner"] == name:
@@ -104,13 +104,24 @@ def check_update():
                         bug = values["bug"]
                         ss_progress = values["progress"]
                         db_progress = item["progress"]
+                        # 清洗数据
                         if ss_progress is None:
                             ss_progress = ""
                         if db_progress is None:
                             db_progress = ""
                         if ss_progress != db_progress:
-                            print('1st update progress')
-                            print('2nd update progress_delta')
+                            # calculate progress delta & hours change
+                            delta_progress = int(ss_progress.replace("%","")) - int(db_progress.replace("%",""))
+                            hours_delta = int(values["hours"]) - int(item["hours"] if item["hours"] is not None else "0")
+                            print(item["owner"] + item["bug"] + "progress change:" + str(delta_progress)+"%")
+
+                            # update
+                            WorkList.objects.filter(bug=item["bug"]).update(
+                                progress=ss_progress,
+                                progress_delta=str(delta_progress)+"%",
+                                hours=str(values["hours"]),
+                                hours_delta=str(hours_delta)
+                            )
 
 
 def get_TM_list():

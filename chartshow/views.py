@@ -21,10 +21,7 @@ def indexPage(request):
     # for key in dic_tm:
     #     context_tml[key] = dic_tm[key]
     #     listq.append({'name': key, 'data': [context_tml[key]]})
-
-    work_count, work_list = wk.get_db()
-    return render(request, 'chartshow/index.html', {'work_count': work_count,
-                                                    'work_list': work_list})
+    return render(request, 'chartshow/index.html')
 
 
 def chart(request):
@@ -41,6 +38,13 @@ def emergency(request):
 
 def settings(request):
     return render(request, 'chartshow/settings.html')
+
+
+def workload(request):
+    # wk.check_update()
+    work_count, work_list = wk.get_db()
+    return render(request, 'chartshow/workload.html', {'work_count': work_count,
+                                                    'work_list': work_list})
 
 
 def getLoop(request, title):

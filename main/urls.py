@@ -26,6 +26,7 @@ urlpatterns = [
     path('send', views.send_info),
     path('chart', views.chart),
     path('team', views.team),
+    path('workload', views.workload),
     path('emergency', views.emergency),
     path('settings', views.settings),
     path('get/<str:title>', views.getLoop),

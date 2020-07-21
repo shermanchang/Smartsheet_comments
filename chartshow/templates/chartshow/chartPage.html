@@ -18,15 +18,15 @@
                 </a>
               </li>
                 <li>
-                <a href="index">
+                <a href="workload">
                   <i class="fa fa-fw fa-lg fa-list-alt "></i>
                   <span>Work load</span>
                 </a>
               </li>
                 <li>
                 <a href="chart">
-                  <i class="fa fa-fw fa-lg fa-bar-chart "></i>
-                  <span>Chart view</span>
+                  <i class="fa fa-fw fa-lg fa-line-chart "></i>
+                  <span>Flowchart</span>
                 </a>
               </li>
                 <li>
@@ -46,102 +46,10 @@
     </div>
      <div class="col-8 "> <!-- text-center -->
     <div class="row ">
-        <div class="col-4 align-self-start ">
-            <div style="width:500px; margin-top: 100px;margin-right:0px;">
-              <canvas id="myChart" width="600" height="300"></canvas>
-            </div>
-        </div>
-        <div class="col-4 align-self-end">
-            <div style="width:500px; margin-top: 100px;margin-left:300px;">
-              <canvas id="myChart2" width="600" height="300"></canvas>
-            </div>
-        </div>
-      </div>
+
+    </div>
 </div>
     <div class="col-2 align-self-end">
     </div>
 </div>
-<script language="JavaScript">
-$(document).ready(function() {
-var ctx1 = document.getElementById("myChart2").getContext('2d');
-var myChart = new Chart(ctx1, {
-    type: 'bar',
-    data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-});
-</script>
-
-<script>
-$(document).ready(function() {
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-         type: 'polarArea',   //  线形图：line、条形图：bar 、雷达图：radar、馅饼和甜甜圈图表：pie、极区面积图：polarArea、汽泡：bubble
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-});
-</script>
 {% endblock %}

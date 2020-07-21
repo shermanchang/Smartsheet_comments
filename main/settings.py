@@ -137,4 +137,5 @@ DEFAULT_FROM_EMAIL = 'iba_gz_ptracker@163.com'
 # crontab 定时任务
 CRONJOBS = (
     ('*/2 * * * *', 'chartshow.utils.mailing.mailing'),
+    ('*/2 * * * *', 'chartshow.utils.weekly_check.check_update'),
 )

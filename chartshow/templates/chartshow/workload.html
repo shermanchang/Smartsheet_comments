@@ -1,0 +1,100 @@
+{% extends 'chartshow/basePage.html' %}
+{% load static %}
+{% block content %}
+<div class="row " style="margin-top: 80px">
+    <div class="col-2 align-self-start ">
+        <nav class="navbar navbar-vertical-left">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="index">
+                  <i class="fa fa-fw fa-lg fa-home"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="team">
+                  <i class="fa fa-fw fa-lg fa-vcard-o"></i>
+                  <span>MyTeam</span>
+                </a>
+              </li>
+                <li>
+                <a href="workload">
+                  <i class="fa fa-fw fa-lg fa-list-alt "></i>
+                  <span>Work load</span>
+                </a>
+              </li>
+                <li>
+                <a href="chart">
+                  <i class="fa fa-fw fa-lg fa-line-chart "></i>
+                  <span>Flowchart</span>
+                </a>
+              </li>
+                <li>
+                <a href="emergency">
+                  <i class="fa fa-fw fa-lg fa-exclamation-triangle"></i>
+                  <span>"Site Down"</span>
+                </a>
+              </li>
+                <li>
+                <a href="settings">
+                  <i class="fa fa-fw fa-lg fa-cog fa-spin"></i>
+                  <span>settings</span>
+                </a>
+              </li>
+            </ul>
+        </nav>
+    </div>
+     <div class="col-8 "> <!-- text-center -->
+         Progress from this week compare with last week.
+         <div class="progress">
+          <div class="progress-bar bg-nor" role="progressbar" style="width: 34%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">done before</div>
+          <div class="progress-bar bg-su" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">done this week</div>
+          <div class="progress-bar bg-error" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">no progress this week</div>
+         </div>
+      <div class="accordion" id="accordionExample">
+          {% for name in work_count %}
+          <div class="card">
+            <div class="float-mode card-header justify-content-between align-items-center" id="heading_{{name.owner|slugify}}"
+             data-toggle="collapse" data-target="#collapse_{{name.owner|slugify}}" aria-expanded="false" aria-controls="collapse_{{name.owner|slugify}}">
+              <h2 class="mb-0">
+                <button class="btn" type="button">
+                  <i class="fa fa-fw fa-lg fa-list-alt "></i> &nbsp; {{ name.owner }}
+                    <span class="badge badge-success badge-pill" style="position: absolute;right: 0px; margin-top: 20px;margin-right:40px;">
+                        {{ name.work_count }}
+                    </span>
+                 </button>
+              </h2>
+            </div>
+            <div id="collapse_{{name.owner|slugify}}" class="collapse" aria-labelledby="heading_{{name.owner|slugify}}" data-parent="#accordionExample">
+              <div class="card-body">
+                {% for item in work_list %}
+                  {% if item.owner == name.owner %}
+                  <p><font size="2" face="arial" class="color-font">ROOM <strong>{{ item.room }}</strong> : {{ item.mid }} - {{ item.procedure }}</font></p>
+                  <p class="align-items-right"><font size="2" face="arial" class="color-font">Total used:<strong>{{ item.hours }}</strong> h, This week:<strong>{{ item.hours_delta }}</strong> h</font></p>
+                  <p class="align-items-right"><font size="2" face="arial" class="color-font">Last modified:<strong>{{ item.modified_at }}</strong> </font></p>
+                    <div class="progress">
+<!--                        check the progress if done-->
+                      {% if item.progress == '1%' %}
+                        <div class="progress-bar bg-nor" role="progressbar" style="width: 2%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ item.progress }}</div>
+                      {% else %}
+                        <div class="progress-bar bg-nor" role="progressbar" style="width: {{ item.progress }}" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ item.progress }}</div>
+                      {% endif %}
+<!--                        check the delta if have-->
+                      {% if item.progress_delta == '0' and not item.progress == '100%' %}
+                        <div class="progress-bar progress-bar-striped bg-error" role="progressbar" style="width: 2%" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">0%</div>
+                      {% elif not item.progress_delta == '0' and not item.progress == '100%' %}
+                        <div class="progress-bar progress-bar-striped bg-su" role="progressbar" style="width: {{ item.progress_delta }}" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ item.progress_delta }}</div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+      </div>
+     </div>
+    <div class="col-2 align-self-end">
+    </div>
+</div>
+{% endblock %}

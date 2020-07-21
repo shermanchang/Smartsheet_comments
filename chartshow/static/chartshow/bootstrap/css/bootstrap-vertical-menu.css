@@ -31,6 +31,17 @@
   float: none;
 }
 
+ul.togo_coll {
+  width: 100%;
+  height: 60%;
+  display: table;
+  list-style: none;
+}
+.togo_coll > li{
+    display: block;
+    float: none;
+}
+
 .navbar-vertical-left ul.navbar-nav > li > a {
   display: table-cell;
   vertical-align: middle;

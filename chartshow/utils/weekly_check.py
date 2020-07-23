@@ -12,7 +12,7 @@ import re
 
 from django.db.models import Count
 
-from ..models import Owner, WorkList
+from ..models import Owner, WorkList, Flowchart_mid
 
 access_token = "vwlyghxsunr2uzmotowt4wr7ei"
 
@@ -108,7 +108,6 @@ def check_update():
     db_data = list(data)
     local_work_list = get_TM_work_list()
 
-
     # loop the db data, this will only update what already in the db. but no action for new assigning job
     for item in db_data:
         for name, value_list in local_work_list.items():
@@ -125,14 +124,15 @@ def check_update():
                             db_progress = ""
                         if ss_progress != db_progress:
                             # calculate progress delta & hours change
-                            delta_progress = int(ss_progress.replace("%","")) - int(db_progress.replace("%",""))
-                            hours_delta = int(values["hours"]) - int(item["hours"] if item["hours"] is not None else "0")
-                            print(item["owner"] + item["bug"] + "progress change:" + str(delta_progress)+"%")
+                            delta_progress = int(ss_progress.replace("%", "")) - int(db_progress.replace("%", ""))
+                            hours_delta = int(values["hours"]) - int(
+                                item["hours"] if item["hours"] is not None else "0")
+                            print(item["owner"] + item["bug"] + "progress change:" + str(delta_progress) + "%")
 
                             # 1st, update worklist progress
                             WorkList.objects.filter(bug=item["bug"]).update(
                                 progress=ss_progress,
-                                progress_delta=str(delta_progress)+"%",
+                                progress_delta=str(delta_progress) + "%",
                                 hours=str(values["hours"]),
                                 hours_delta=str(hours_delta),
                                 active=True
@@ -141,7 +141,6 @@ def check_update():
                             Owner.objects.filter(owner=item["owner"]).update(
                                 active=True
                             )
-
 
 
 def get_TM_list():
@@ -180,3 +179,35 @@ def get_TL_list():
     return employee_list
 
 
+def get_flowchart_items():
+    fc_data = list(Flowchart_mid.objects.all().values())
+    gtr3_data = []
+    print(fc_data)
+    for mid in fc_data:
+        if mid["room"] not in ["GTR1", "GTR2"]:
+            gtr3_data.append(mid)
+    row_list = list()
+    names = locals()
+    for i in range(2, 26):
+        names["row" + str(i)] = list()
+        for row in gtr3_data:
+            if row["row"] == str(i):
+                names["row" + str(i)].append(row)
+        row_list.append(names["row" + str(i)])
+        # row_list[i] = names["row" + str(i)]
+    for item in row_list:
+        i = 0
+        if 12 > len(item):
+            for t in range(12):
+                flag = False
+                for it in item:
+                    it["col"] = int(it["col"])
+                    if t+1 == it["col"]:
+                        flag = True
+                if flag is False:
+                    item.append({"col": t+1})
+    ordered_worklist = []
+    for row in row_list:
+        row = sorted(row, key=lambda e: e.__getitem__('col'), reverse=False)
+        ordered_worklist.append(row)
+    return ordered_worklist

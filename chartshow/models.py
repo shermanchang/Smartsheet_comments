@@ -32,7 +32,7 @@ class WorkList(models.Model):
         return self.row_id
 
 
-class flowchart_mid(models.Model):
+class Flowchart_mid(models.Model):
     row = models.CharField(max_length=10, null=False)
     col = models.CharField(max_length=10, null=False)
     owner = models.CharField(max_length=100)
@@ -49,7 +49,10 @@ class flowchart_mid(models.Model):
     active = models.BooleanField()
     background_group = models.CharField(max_length=50, null=True)
     test_type = models.CharField(max_length=50, null=True)
-    background = models.CharField(max_length=50, null=True)
+    ccp = models.CharField(max_length=10, null=True)
+
+    def __str__(self):  # __unicode__ on Python 2
+        return self.row, self.col, self.room
 
     class Meta:
         unique_together = (("row", "col", "room"),)

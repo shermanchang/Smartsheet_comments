@@ -3,7 +3,7 @@ from django.http import FileResponse
 from django.shortcuts import render, HttpResponse
 from django.template.loader import render_to_string
 
-from .utils import mailing, db_init, weekly_check as wk
+from .utils import mailing, db_init, flowchart_db, weekly_check as wk
 from django.template import Context, loader
 from django.core.mail import EmailMultiAlternatives
 import collections
@@ -25,7 +25,8 @@ def indexPage(request):
 
 
 def chart(request):
-    return render(request, 'chartshow/chartPage.html')
+    row_list = wk.get_flowchart_items()
+    return render(request, 'chartshow/chartPage.html', {"row_list": row_list})
 
 
 def team(request):

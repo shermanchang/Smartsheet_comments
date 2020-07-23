@@ -1,55 +1,2798 @@
 {% extends 'chartshow/basePage.html' %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'chartshow/css/flowchart.css'%}">
+{% endblock %}
 {% block content %}
 <div class="row " style="margin-top: 80px">
-    <div class="col-2 align-self-start ">
-        <nav class="navbar navbar-vertical-left">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="index">
-                  <i class="fa fa-fw fa-lg fa-home"></i>
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="team">
-                  <i class="fa fa-fw fa-lg fa-vcard-o"></i>
-                  <span>MyTeam</span>
-                </a>
-              </li>
-                <li>
-                <a href="workload">
-                  <i class="fa fa-fw fa-lg fa-list-alt "></i>
-                  <span>Work load</span>
-                </a>
-              </li>
-                <li>
-                <a href="chart">
-                  <i class="fa fa-fw fa-lg fa-line-chart "></i>
-                  <span>Flowchart</span>
-                </a>
-              </li>
-                <li>
-                <a href="emergency">
-                  <i class="fa fa-fw fa-lg fa-exclamation-triangle"></i>
-                  <span>"Site Down"</span>
-                </a>
-              </li>
-                <li>
-                <a href="settings">
-                  <i class="fa fa-fw fa-lg fa-cog fa-spin"></i>
-                  <span>settings</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
+    <div class="col-1 align-self-start ">
+        {% include './nav.html' %}
     </div>
-     <div class="col-8 "> <!-- text-center -->
-    <div class="row ">
+    <div class="col-11 " > <!-- text-center -->
+        <div class="row">
+            <div class="col-6 cat-poss">
+                CBCT/PPVS
+            </div>
+            <div class="col-1 cat-poss">
+                DNSH
+            </div>
+            <div class="col-1 cat-poss">
+                PPS
+            </div>
+            <div class="col-4 cat-poss">
+                GTR
+            </div>
+        </div>
+<!--        row 1-->
+        <div class="row" style="margin-top:5px;">
+            <div class="col-1 card-mid" >
 
-    </div>
-</div>
-    <div class="col-2 align-self-end">
+            </div>
+            <div class="col-1 card-mid">
+
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-prerequisites" >
+                  <div class="card-body">
+                    <p class="card-title">MID-22103<i class="fa fa-pause-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                    <p class="card-text">75% - Sherman
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                        </div>
+                    </p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+
+            </div>
+            <div class="col-1 card-mid">
+
+            </div>
+            <div class="col-1 card-mid">
+
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-prerequisites">
+                    <div class="card-body">
+                      <p class="card-title">Gantry Installed<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-prerequisites">
+                    <div class="card-body">
+                      <p class="card-title">Plate Ready<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+               <div class="card card-prerequisites">
+                    <div class="card-body">
+                      <p class="card-title">Survey Done<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+
+        </div>
+<!--        row blank-->
+        <div class="row row_blank" style="margin-top:5px;">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid dnsh-rigging">
+                <p style="font-size:x-small">PPS Leoni Rigging + SAT</p>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+        </div>
+<!--        row 2-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid dnsh-rigging">
+                <div class="card card-toc">
+                    <div class="card-body">
+                      <p class="card-title">MID-53349<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-toc">
+                    <div class="card-body">
+                      <p class="card-title">MID-15308<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-toc">
+                    <div class="card-body">
+                      <p class="card-title">MID-35263<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-toc">
+                    <div class="card-body">
+                      <p class="card-title">MID-1508<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        row 3-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid pps-rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-15310<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+        </div>
+<!--        row 4-->
+        <div class="row ">
+            <div class="col-1 card-mid rigging" >
+                <p style="font-size:x-small">PPVS Rigging + AI Readiness</p>
+            </div>
+            <div class="col-1 card-mid rigging" >
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-38541<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-60180<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-2017<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid pps-rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-57306<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-toc">
+                    <div class="card-body">
+                      <p class="card-title">MID-15311<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-41048<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+        </div>
+<!--        row 5-->
+        <div class="row ">
+            <div class="col-1 card-mid rigging">
+                <div class="card card-cbct">
+                    <div class="card-body">
+                      <p class="card-title">MID-32138<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+
+            </div>
+            <div class="col-1 card-mid rigging" >
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-16775<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-64108<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-55262<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1 card-mid">
+
+            </div>
+            <div class="col-1 card-mid">
+
+            </div>
+            <div class="col-1 card-mid pps-rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-57309<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-1561<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-15312<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-2515<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-5809<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        row 6-->
+        <div class="row ">
+            <div class="col-1 card-mid rigging" >
+                <div class="card card-cbct">
+                    <div class="card-body">
+                      <p class="card-title">MID-57211<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-66442<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-58402<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-2019<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid pps-rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-29600<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+        </div>
+<!--        row 7-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid pps-rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-57307<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-62212<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-65492<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+                <p style="font-size:x-small">Gantry Rigging + Alignment Mech + Elec</p>
+            </div>
+        </div>
+<!--        row blank-->
+        <div class="row row_blank">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid pps-rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+            <div class="col-1 card-mid rigging">
+            </div>
+        </div>
+<!--        row 8-->
+        <div class="row row_grey" style="height:15px;margin-top:5px;">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+                <p style="font-size:x-small" class="align-text-bottom text-justify">SRCU-I Testing</p>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+        </div>
+<!--        row 9 SRCU-->
+        <div class="row row_grey">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-43352<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-45578<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-43441<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card card-test">
+                    <div class="card-body">
+                      <p class="card-title">MID-45778<i class="fa fa-check-circle fa-lg fa-fw" aria-hidden="true"></i></p>
+                        <p class="card-text">100%
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+        </div>
+<!--        row 10-->
+        <div class="row row_grey" style="height:5px;margin-bottom:5px;">
+            <div class="col-1 card-mid" >
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+            <div class="col-1 card-mid">
+            </div>
+        </div>
+<!--        row 11-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 12-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 13-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 14-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 15-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 16-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 17-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 18-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 19-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 20-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 21-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 22-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 23-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 24-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 25-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 26-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 27-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 28-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+<!--        row 29-->
+        <div class="row ">
+            <div class="col-1 card-mid" >
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card" >
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+            <div class="col-1 card-mid">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Special title treatment</p>
+                    <p class="card-text">With  content.</p>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}

@@ -74,6 +74,20 @@ def get_db():
     db_data = list(data)
     # get all name
     work_count = list(WorkList.objects.values('owner').order_by('owner').annotate(work_count=Count('row_id')))
+    active = list(
+        WorkList.objects.values('owner').order_by('owner').filter(active=True).annotate(work_count=Count('row_id')))
+    inactive = list(
+        WorkList.objects.values('owner').order_by('owner').filter(active=False).annotate(work_count=Count('row_id')))
+
+    # add active status in list
+    for wc in work_count:
+        for ac in active:
+            if wc["owner"] == ac["owner"]:
+                wc["active"] = ac["work_count"]
+    for wc in work_count:
+        for inac in inactive:
+            if wc["owner"] == inac["owner"]:
+                wc["inactive"] = inac["work_count"]
 
     list_by_name = []
     # packaging the data
@@ -115,13 +129,19 @@ def check_update():
                             hours_delta = int(values["hours"]) - int(item["hours"] if item["hours"] is not None else "0")
                             print(item["owner"] + item["bug"] + "progress change:" + str(delta_progress)+"%")
 
-                            # update
+                            # 1st, update worklist progress
                             WorkList.objects.filter(bug=item["bug"]).update(
                                 progress=ss_progress,
                                 progress_delta=str(delta_progress)+"%",
                                 hours=str(values["hours"]),
-                                hours_delta=str(hours_delta)
+                                hours_delta=str(hours_delta),
+                                active=True
                             )
+                            # 2nd, update the active status of owner to True
+                            Owner.objects.filter(owner=item["owner"]).update(
+                                active=True
+                            )
+
 
 
 def get_TM_list():

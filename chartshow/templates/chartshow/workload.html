@@ -3,46 +3,7 @@
 {% block content %}
 <div class="row " style="margin-top: 80px">
     <div class="col-2 align-self-start ">
-        <nav class="navbar navbar-vertical-left">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="index">
-                  <i class="fa fa-fw fa-lg fa-home"></i>
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="team">
-                  <i class="fa fa-fw fa-lg fa-vcard-o"></i>
-                  <span>MyTeam</span>
-                </a>
-              </li>
-                <li>
-                <a href="workload">
-                  <i class="fa fa-fw fa-lg fa-list-alt "></i>
-                  <span>Work load</span>
-                </a>
-              </li>
-                <li>
-                <a href="chart">
-                  <i class="fa fa-fw fa-lg fa-line-chart "></i>
-                  <span>Flowchart</span>
-                </a>
-              </li>
-                <li>
-                <a href="emergency">
-                  <i class="fa fa-fw fa-lg fa-exclamation-triangle"></i>
-                  <span>"Site Down"</span>
-                </a>
-              </li>
-                <li>
-                <a href="settings">
-                  <i class="fa fa-fw fa-lg fa-cog fa-spin"></i>
-                  <span>settings</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
+        {% include './nav.html' %}
     </div>
      <div class="col-8 "> <!-- text-center -->
          Progress from this week compare with last week.
@@ -59,9 +20,16 @@
               <h2 class="mb-0">
                 <button class="btn" type="button">
                   <i class="fa fa-fw fa-lg fa-list-alt "></i> &nbsp; {{ name.owner }}
-                    <span class="badge badge-success badge-pill" style="position: absolute;right: 0px; margin-top: 20px;margin-right:40px;">
-                        {{ name.work_count }}
+                    {%if name.active %}
+                    <span class="badge badge-active badge-pill" style="position: absolute;right: 40px; margin-top: 20px;margin-right:40px;">
+                        {{ name.active }}
                     </span>
+                    {% endif %}
+                    {%if name.inactive %}
+                    <span class="badge badge-inactive badge-pill" style="position: absolute;right: 0px; margin-top: 20px;margin-right:40px;">
+                        {{ name.inactive }}
+                    </span>
+                    {% endif %}
                  </button>
               </h2>
             </div>

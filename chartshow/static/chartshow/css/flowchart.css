@@ -1,0 +1,19 @@
+.card{transition: all .5s;padding:2px;width:100px;}
+.card:hover{ transform: translateY(-3px);}
+.card-title{margin-bottom:0px;}
+.card-body{padding:0px;font-size:xx-small}
+.card-mid{padding:0px;}
+.cat-poss{margin-left:-3px;height:22px;color:#fff;background-color:#3cba92;border:1px solid #000;text-align:center}
+.card-prerequisites{background-color:#F0E68C}
+.card-toc{background-color:	#66CDAA}
+.card-test{background-color:#CCFFCC}
+.card-cbct{background-color:#66CCFF}
+.progress{height:5px;margin:0px;}
+.row_blank{height:40px;}
+.rigging{background-color:#E1FFFF;}
+.pps-rigging{background-color:#AFEEEE}
+.row_grey{background-color:	#DCDCDC}
+
+
+.fa-pause-circle{color:#F08080;position: absolute;right: 5px;}
+.fa-check-circle{color:#32CD32;position: absolute;right: 5px;}

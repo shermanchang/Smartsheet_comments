@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="{% static 'chartshow/css/main.css'%}">
 <link rel="stylesheet" href="{% static 'chartshow/css/Chart.css'%}">
 <link rel="stylesheet" href="{% static 'chartshow/bootstrap/css/bootstrap-vertical-menu.css'%}">
+{% block css %}
+{% endblock %}
 </head>
 <body>
 <div class="container-fluid">
@@ -31,5 +33,7 @@
 <script src="{% static 'chartshow/bootstrap/js/bootstrap.js'%}"></script>
 <script src="{% static 'chartshow/scripts/main.js'%}"></script>
 <script src="{% static 'chartshow/scripts/Chart.js'%}"></script>
+{% block script %}
+{% endblock %}
 </body>
 </html>

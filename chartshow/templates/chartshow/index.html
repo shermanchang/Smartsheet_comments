@@ -3,46 +3,7 @@
 {% block content %}
 <div class="row " style="margin-top: 80px">
     <div class="col-2 align-self-start ">
-        <nav class="navbar navbar-vertical-left">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="index">
-                  <i class="fa fa-fw fa-lg fa-home"></i>
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="team">
-                  <i class="fa fa-fw fa-lg fa-vcard-o"></i>
-                  <span>MyTeam</span>
-                </a>
-              </li>
-                <li>
-                <a href="workload">
-                  <i class="fa fa-fw fa-lg fa-list-alt "></i>
-                  <span>Work load</span>
-                </a>
-              </li>
-                <li>
-                <a href="chart" class="togo_col">
-                  <i class="fa fa-fw fa-lg fa-line-chart "></i>
-                  <span>Flowchart</span>
-                </a>
-              </li>
-                <li>
-                <a href="emergency">
-                  <i class="fa fa-fw fa-lg fa-exclamation-triangle"></i>
-                  <span>"Site Down"</span>
-                </a>
-              </li>
-                <li>
-                <a href="settings">
-                  <i class="fa fa-fw fa-lg fa-cog fa-spin"></i>
-                  <span>settings</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
+        {% include './nav.html' %}
     </div>
      <div class="col-8 "> <!-- text-center -->
     <div class="row ">

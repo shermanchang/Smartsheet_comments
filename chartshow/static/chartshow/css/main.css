@@ -53,9 +53,14 @@ min-width: 100%;}
 color:#330867;
 }
 
-.badge-success {
+.badge-inactive {
     color: #fff;
     background-color: #8fd3f4;
+}
+
+.badge-active {
+    color: #fff;
+    background-color: #43e97b;
 }
 
 .bg-nor{
@@ -78,3 +83,5 @@ margin-block-end: 0;
 .progress{
 margin-bottom: 10px;
 }
+
+
